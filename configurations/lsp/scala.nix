@@ -13,24 +13,6 @@ in {
     vim.luaConfigRC = ''
       vim.opt_global.shortmess:remove("F")
 
-      --{"🭽", "FloatBorder"},
-
-      --{"▔", "FloatBorder"},
-
-      --{"🭾", "FloatBorder"},
-
-      --{"▕", "FloatBorder"},
-
-      --{"🭿", "FloatBorder"},
-
-      --{"▁", "FloatBorder"},
-
-      --{"🭼", "FloatBorder"},
-
-      --{"▏", "FloatBorder"},
-
-      --{ "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
-
       metals_config = require("metals").bare_config()
       metals_config.init_options.statusBarProvider = "on"
       --metals_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -96,18 +78,7 @@ in {
           vim.keymap.set('n', '<leader>mc', require("telescope").extensions.metals.commands, { desc = "all commands [METALS]" })
           vim.keymap.set('n', '<leader>D', require('dap').repl.toggle, { desc = "repl toggle [DAP]" })
           overrideColors()
-          --[[
-          which_key.register({
-            m = {
-              name = "metals",
-              d = { "<cmd>MetalsRunDoctor<cr>", "run doctor" },
-              i = { "<cmd>MetalsInfo<cr>", "info" },
-              l = { "<cmd>MetalsToggleLogs<cr>", "logs" },
-              c = { require("telescope").extensions.metals.commands, "all commands" },
-            }
-            }, { prefix = "<leader>" }
-          )
-          --]]
+          
         end,
         group = nvim_metals_group,
       })

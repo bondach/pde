@@ -66,15 +66,12 @@ in {
             vim.keymap.set('n', '<leader>fsw', require('telescope.builtin').lsp_dynamic_workspace_symbols, { desc = "workspace [LSP]" })
           end
       
-          -- Добавляем подсказку в which_key, если определен хотя бы один из двух маппингов выше
-          --which_key.register({ f = { s = { name = 'symbols (lsp)', }, }, }, { prefix = "<leader>" })
-      
           if sc.definitionProvider then
             vim.keymap.set('n', '<leader>d', require('telescope.builtin').lsp_definitions, { desc = "definition(s) [LSP]" })
           end
       
           if sc.implementationProvider then
-            vim.keymap.set('n', '<leader>i', require('telescope.builtin').lsp_implementations, { desc = "definition(s) [LSP]" }) 
+            vim.keymap.set('n', '<leader>i', require('telescope.builtin').lsp_implementations, { desc = "implementation(s) [LSP]" }) 
           end
       
           if sc.codeActionProvider then

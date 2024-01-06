@@ -18,15 +18,9 @@
         vim.keymap.set('n', '<leader>gts', '<cmd>Gitsigns toggle_signs<cr>', { desc = 'signs' })
         vim.keymap.set('n', '<leader>gtw', '<cmd>Gitsigns toggle_word_diff<cr>', { desc = 'word diff' })
         vim.keymap.set('n', '<leader>gtd', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'deleted' })
-
-        which_key.register({
-          ["<leader>g"] = { name = "git" },
-          ["<leader>gt"] = { name = "toggle" },
-        })
       end
     end
 
-       
     gitsigns_setup()
   '';
 }
