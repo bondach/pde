@@ -17,6 +17,10 @@ in
     pkgs.plugins.cmp-lsp
     pkgs.plugins.cmp-lsp-signature-help
    ]
+   else []) ++ (if (cfg.enable && cfg.clojure.enable) then
+   [
+    pkgs.plugins.cmp-clojure
+   ]
    else []);
 
   config.vim.luaConfigRC = ''
@@ -54,7 +58,7 @@ in
         ${writeIf cfg.enable ''{ name = "nvim_lsp" },''}
         { name = "vsnip" },
         ${writeIf cfg.enable ''{ name = "nvim_lsp_signature_help" },''}
-        ${writeIf false ''name = "conjure",'' }
+        ${writeIf cfg.clojure.enable ''{ name = "conjure" },'' }
       },
       { { name = "buffer" } }),
       snippet = {
@@ -95,7 +99,8 @@ in
             nvim_lua = "[NVIM_LUA]",
             nvim_lsp = "[LSP]",
             luasnip = "[Snippet]",
-            buffer = "[Buffer]"
+            buffer = "[Buffer]",
+            ${writeIf cfg.clojure.enable ''conjure = "[Conjure]",''}
           })[entry.source.name]
           return vim_item
         end,

@@ -1,10 +1,11 @@
-{ inputs, system, config, target, ... }:
+{ inputs, config, target, ... }:
 
 [
   (import ./java.nix)
+  (import ./clojure.nix { inherit inputs; })
   (import ./metals.nix)
   (import ./treesitter.nix { inherit inputs; })
   (import ./plugins.nix { inherit inputs; })
-  (import ./neovim.nix { inherit inputs system config; })
+  (import ./neovim.nix { inherit inputs config; })
   (import ./pde.nix { inherit target; })
 ]

@@ -26,7 +26,14 @@ in
           which_key.register({
             ["<leader>fs"] = { name = "symbols [LSP]"},
             ${writeIf cfg.scala.enable ''
-              ["<leader>m"] = { name = "[METALS]" },
+              ["<leader>m"] = { name = "Metals" },
+            ''
+            }
+            ${writeIf cfg.clojure.enable ''
+              ["<leader>c"] = { name = "Conjure" },
+              ["<leader>ce"] = { name = "Eval" },
+              ["<leader>cl"] = { name = "Log" },
+              ["<leader>clr"] = { name = "reset" },
             ''
             }
           })

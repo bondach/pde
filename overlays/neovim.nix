@@ -1,8 +1,8 @@
-{inputs, system, config, ...}:
+{inputs, config, ...}:
 
 f: p:
 let
-  neovim = inputs.neovim-nightly-overlay.packages.${system}.neovim;
+  neovim = inputs.neovim-nightly-overlay.packages.${f.system}.neovim;
   neovimConfigurations = p.lib.evalModules {
     modules = [ 
                 { imports = [ ../configurations ]; } 

@@ -7,7 +7,7 @@
         let
           presets = import ./presets;
           overlays = import ./overlays {
-            inherit inputs system target;
+            inherit inputs target;
             config = presets.${target};
           };
         in import nixpkgs { inherit system overlays; };
@@ -17,6 +17,7 @@
         default = (pkgs "base").pde;
         scala   = (pkgs "scala").pde;
         nix     = (pkgs "nix").pde;
+        clojure = (pkgs "clojure").pde;
       };
     }
   );
@@ -128,10 +129,19 @@
       url = "github:hrsh7th/cmp-nvim-lsp-signature-help";
       flake = false;
     };
+    np-cmp-clojure = {
+      url = "github:PaterJason/cmp-conjure";
+      flake = false;
+    };
     np-dap = {
       url = "github:mfussenegger/nvim-dap";
       flake = false;
     };
+    np-conjure = {
+      url = "github:Olical/conjure";
+      flake = false;
+    };
+
 
 
     #------------- Themes section --------------------
@@ -237,6 +247,16 @@
       flake = false;
     };
     #=================================================
+
+    clj-nix.url = "github:jlesquembre/clj-nix";
+    clojure-lsp = {
+      url = "github:clojure-lsp/clojure-lsp";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        clj-nix.follows = "clj-nix";
+        flake-utils.follows = "flake-utils";
+      };
+    };
 
   };
 }

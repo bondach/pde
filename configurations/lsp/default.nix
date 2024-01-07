@@ -10,6 +10,7 @@ in {
   imports = [
     ./scala.nix
     ./nix.nix
+    ./clojure.nix
   ];
 
   options.vim.lsp = {
