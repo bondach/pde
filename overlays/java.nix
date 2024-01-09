@@ -1,6 +1,7 @@
+{ javaPlatform }:
 f: p:
 
 {
-  jdk = p.graalvm-ce;
-  jre = p.graalvm-ce;
+  jdk = p.${javaPlatform};
+  jre = p.${javaPlatform};
 }

@@ -1,7 +1,7 @@
-{ inputs, config, target, ... }:
+{ inputs, config, target, javaPlatform, ... }:
 
 [
-  (import ./java.nix)
+  (import ./java.nix { inherit javaPlatform; })
   (import ./clojure.nix { inherit inputs; })
   (import ./metals.nix)
   (import ./treesitter.nix { inherit inputs; })

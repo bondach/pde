@@ -24,11 +24,15 @@
         set_env = { ["COLORTERM"] = "truecolor" },
         selection_caret = " ",
         entry_prefix = " ",
-        path_display = { "shorten" },
-        dynamic_preview_title = true,
+        path_display = {
+          shorten = { len = 1, },
+          "truncate",
+        },
+        dynamic_preview_title = false,
         --[[
         path_display = function(opts, path)
-          local tail = require('telescope.utils').path_tail(path)
+          local utils = require('telescope.utils')
+          local tail = utils.path_tail(path)
           return string.format("%s (%s)", tail, path)
         end,
         --]]

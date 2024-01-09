@@ -3,21 +3,22 @@
 
   outputs = inputs@{ nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem(system:
     let
-      pkgs = target:
+      pkgs = { target, javaPlatform ? "graalvm-ce"}:
         let
           presets = import ./presets;
           overlays = import ./overlays {
-            inherit inputs target;
+            inherit inputs target javaPlatform;
             config = presets.${target};
           };
         in import nixpkgs { inherit system overlays; };
 
     in {
       packages = {
-        default = (pkgs "base").pde;
-        scala   = (pkgs "scala").pde;
-        nix     = (pkgs "nix").pde;
-        clojure = (pkgs "clojure").pde;
+        default = (pkgs { target = "base"; }).pde;
+        scala   = (pkgs { target = "scala"; }).pde;
+        scala-temurin-17 = (pkgs { target = "scala"; javaPlatform = "temurin-bin-17";}).pde;
+        nix     = (pkgs { target = "nix"; }).pde;
+        clojure = (pkgs { target = "clojure"; }).pde;
       };
     }
   );
