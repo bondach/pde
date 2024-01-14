@@ -21,7 +21,7 @@ in {
           ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded", }),
         },
         on_attach = function(client, bufnr)
-          vim.keymap.set('n', '<leader>ee', "<cmd>ConjureEval<cr>", { desc = "expression", })
+          vim.keymap.set('n', '<leader>ee', "<cmd>ConjureEvalCurrentForm<cr>", { desc = "current form", })
           vim.keymap.set('n', '<leader>ew', "<cmd>ConjureEvalWord<cr>", { desc = "word", })
           vim.keymap.set('n', '<leader>eb', "<cmd>ConjureEvalBuf<cr>", { desc = "buf", })
           vim.keymap.set('n', '<leader>ef', "<cmd>ConjureEvalFile<cr>", { desc = "file", })
