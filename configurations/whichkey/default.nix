@@ -30,8 +30,8 @@ in
             ''
             }
             ${writeIf cfg.clojure.enable ''
+              ["<leader>e"] = { name = "eval [CONJURE]" },
               ["<leader>c"] = { name = "Conjure" },
-              ["<leader>ce"] = { name = "Eval" },
               ["<leader>cl"] = { name = "Log" },
               ["<leader>clr"] = { name = "reset" },
             ''

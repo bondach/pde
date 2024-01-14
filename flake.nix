@@ -14,11 +14,13 @@
 
     in {
       packages = {
-        default = (pkgs { target = "base"; }).pde;
-        scala   = (pkgs { target = "scala"; }).pde;
-        scala-temurin-17 = (pkgs { target = "scala"; javaPlatform = "temurin-bin-17";}).pde;
-        nix     = (pkgs { target = "nix"; }).pde;
+        default = (pkgs { target = "base"; }).neovim;
+      };
+      devShells = {
+        scala = (pkgs { target = "scala"; }).pde;
+        scala-temurin-17 = (pkgs { target = "scala"; javaPlatform = "temurin-bin-17"; }).pde;
         clojure = (pkgs { target = "clojure"; }).pde;
+        nix = (pkgs { target = "nix"; }).pde;
       };
     }
   );
@@ -28,9 +30,10 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+    neovim = {
+      url = "github:neovim/neovim?dir=contrib&ref=v0.9.5";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
 
     nixd.url = "github:nix-community/nixd";
@@ -40,6 +43,10 @@
     #============= Basic plugins section =============
     np-telescope = {
       url = "github:nvim-telescope/telescope.nvim?ref=0.1.5";
+      flake = false;
+    };
+    np-telescope-live-grep-args = {
+      url = "github:nvim-telescope/telescope-live-grep-args.nvim";
       flake = false;
     };
     np-plenary = {

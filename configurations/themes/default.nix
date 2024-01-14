@@ -31,6 +31,7 @@
       })
   
       vim.cmd.colorscheme('kanagawa')
+      vim.cmd("highlight WinSeparator guifg=#54546D")
     '';
   };
 }

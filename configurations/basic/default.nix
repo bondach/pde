@@ -25,6 +25,11 @@
       vim.g.loaded_perl_provider = 0
       vim.g.loaded_node_provider = 0
       vim.opt.shortmess:append "sI"
+
+      vim.api.nvim_command("autocmd TermOpen * setlocal nonumber")       -- no numbers
+      vim.api.nvim_command("autocmd TermOpen * setlocal norelativenumber") -- no relative numbers
+      vim.api.nvim_command("autocmd TermEnter * setlocal signcolumn=no") -- no sign column
+      vim.keymap.set('t', '<esc>', "<C-\\><C-n>")                    -- esc to exit insert mode
     '';
   };
 }

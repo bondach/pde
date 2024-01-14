@@ -2,10 +2,12 @@
 
 
 {
-  config.vim.plugins = [ pkgs.plugins.telescope pkgs.plugins.plenary ];
+  config.vim.plugins = [ pkgs.plugins.telescope pkgs.plugins.plenary pkgs.plugins.telescope-live-grep-args ];
 
   config.vim.luaConfigRC = ''
-    require("telescope").setup {
+    local telescope = require('telescope')
+    telescope.load_extension("live_grep_args")
+    telescope.setup {
       defaults = {
         vimgrep_arguments = {
           "${pkgs.ripgrep}/bin/rg",
@@ -46,7 +48,9 @@
 
     vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'find files' })
 
-    vim.keymap.set('n', '<leader>fS', '<cmd>Telescope live_grep<cr>', { desc = 'find string' })
+    vim.keymap.set('n', '<leader>fg', '<cmd>lua require("telescope").extensions.live_grep_args.live_grep_args()<cr>', { desc = 'find grep' })
+    vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'find buffers' })
+    vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'find help tags' })
 
   '';
 }
