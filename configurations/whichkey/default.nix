@@ -25,6 +25,7 @@ in
         callback = function(args)
           which_key.register({
             ["<leader>fs"] = { name = "symbols [LSP]"},
+            ["<leader>x"] = { name = "diagnostics"},
             ${writeIf cfg.scala.enable ''
               ["<leader>m"] = { name = "Metals" },
             ''

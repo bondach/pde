@@ -695,6 +695,22 @@
         "type": "github"
       }
     },
+    "np-trouble": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1697626811,
+        "narHash": "sha256-8nLghiueYOtWY7OGVxow9A2G/5lgt+Kt5D8q1xeJvVg=",
+        "owner": "folke",
+        "repo": "trouble.nvim",
+        "rev": "f1168feada93c0154ede4d1fe9183bf69bac54ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "trouble.nvim",
+        "type": "github"
+      }
+    },
     "np-ufo": {
       "flake": false,
       "locked": {
@@ -791,6 +807,7 @@
         "np-telescope": "np-telescope",
         "np-telescope-live-grep-args": "np-telescope-live-grep-args",
         "np-treesitter": "np-treesitter",
+        "np-trouble": "np-trouble",
         "np-ufo": "np-ufo",
         "np-vim-vsnip": "np-vim-vsnip",
         "np-web-devicons": "np-web-devicons",

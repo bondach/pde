@@ -10,6 +10,7 @@
     ./statuscol
     ./ufo
     ./themes
+    ./trouble
     ./lualine
     ./gitsigns
     ./neotree

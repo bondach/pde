@@ -27,6 +27,13 @@
       vim.opt.shortmess:append "sI"
       vim.opt.formatoptions:remove { 'c', 'r', 'o' }
 
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+
+      vim.opt.incsearch = true
+      vim.opt.fileencoding = "utf-8"
+      vim.opt.mouse = "a"
+
       vim.api.nvim_command("autocmd TermOpen * setlocal nonumber")       -- no numbers
       vim.api.nvim_command("autocmd TermOpen * setlocal norelativenumber") -- no relative numbers
       vim.api.nvim_command("autocmd TermEnter * setlocal signcolumn=no") -- no sign column

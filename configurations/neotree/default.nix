@@ -11,6 +11,6 @@
       popup_border_style = "rounded",
     })
 
-    vim.keymap.set('n', '<leader>T', '<cmd>Neotree focus toggle<cr>', { desc = 'file tree' })
+    vim.keymap.set('n', '<leader><Tab>', '<cmd>Neotree focus toggle<cr>', { desc = 'file tree' })
   '';
 }
