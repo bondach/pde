@@ -11,6 +11,7 @@ in {
     ./scala.nix
     ./nix.nix
     ./clojure.nix
+    ./lua.nix
   ];
 
   options.vim.lsp = {
@@ -72,7 +73,7 @@ in {
           end
       
           if sc.implementationProvider then
-            vim.keymap.set('n', '<leader>i', '<cmd>:Telescope lsp_implementations show_line=false<cr>', { desc = "implementation(s) [LSP]" }) 
+            vim.keymap.set('n', '<leader>i', lsp_implementations, { desc = "implementation(s) [LSP]" }) 
           end
       
           if sc.codeActionProvider then
@@ -80,7 +81,7 @@ in {
           end
       
           if sc.referencesProvider then
-            vim.keymap.set('n', '<leader>r', '<cmd>:Telescope lsp_references show_line=false include_declaration=false<cr>', { desc = 'reference(s) [LSP]' })
+            vim.keymap.set('n', '<leader>r', lsp_references, { desc = 'reference(s) [LSP]' })
           end
       
           if sc.renameProvider then

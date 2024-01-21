@@ -33,9 +33,18 @@ let
     vim.lsp.clojure.enable = true;
   };
 
+  lua = {
+    vim.lsp.enable = true;
+    vim.lsp.scala.enable = false;
+    vim.lsp.nix.enable = false;
+    vim.lsp.clojure.enable = false;
+    vim.lsp.lua.enable = true;
+  };
+
 in {
   base = base;
   scala = scala;
   nix = nix;
   clojure = clojure;
+  lua = lua;
 }

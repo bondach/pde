@@ -24,6 +24,29 @@ else if (target == "clojure") then
     '';
   };
 }
+else if (target == "lua") then
+{
+  pde = p.mkShell {
+    name = "pde";
+    packages = [ p.neovim p.fish p.sumneko-lua-language-server ];
+    shellHook = ''
+      echo "Welcom to Lua dev environment!"
+    '';
+
+  };
+}
+else if (target == "nix") then
+{
+  pde = p.mkShell {
+    name = "nix";
+    packages = [ p.neovim p.fish p.nixd ];
+    shellHook = ''
+      echo "Welcom to Nix dev environment!"
+    '';
+
+  };
+}
+
 else { }
 
 

@@ -21,6 +21,7 @@
         scala-temurin-17 = (pkgs { target = "scala"; javaPlatform = "temurin-bin-17"; }).pde;
         clojure = (pkgs { target = "clojure"; }).pde;
         nix = (pkgs { target = "nix"; }).pde;
+        lua = (pkgs { target = "lua"; }).pde;
       };
     }
   );
