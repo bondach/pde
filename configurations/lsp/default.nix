@@ -69,13 +69,11 @@ in {
           end
       
           if sc.definitionProvider then
-            --vim.keymap.set('n', '<leader>d', '<cmd>:Telescope lsp_definitions show_line=false<cr>', { desc = "definition(s) [LSP]" })
-            vim.keymap.set('n', '<leader>d', function() require('trouble').toggle('lsp_definitions') end, { desc = "definition(s) [LSP]" })
+            vim.keymap.set('n', '<leader>d', '<cmd>:Telescope lsp_definitions show_line=false<cr>', { desc = "definition(s) [LSP]" })
           end
       
           if sc.implementationProvider then
-            --vim.keymap.set('n', '<leader>i', lsp_implementations, { desc = "implementation(s) [LSP]" }) 
-            vim.keymap.set('n', '<leader>i', function() require('trouble').toggle('lsp_implementations') end, { desc = "implementation(s) [LSP]" }) 
+            vim.keymap.set('n', '<leader>i', lsp_implementations, { desc = "implementation(s) [LSP]" }) 
           end
       
           if sc.codeActionProvider then
@@ -83,8 +81,7 @@ in {
           end
       
           if sc.referencesProvider then
-            --vim.keymap.set('n', '<leader>r', lsp_references, { desc = 'reference(s) [LSP]' })
-            vim.keymap.set('n', '<leader>r', function() require('trouble').toggle('lsp_references') end, { desc = 'reference(s) [LSP]' })
+            vim.keymap.set('n', '<leader>r', lsp_references, { desc = 'reference(s) [LSP]' })
           end
       
           if sc.renameProvider then
@@ -103,10 +100,6 @@ in {
             vim.keymap.set('n', '<leader>l', vim.lsp.codelens.run, { desc = "codelens [LSP]" })
           end
 
-          vim.keymap.set('n', '<leader>xd', function() require('trouble').toggle('document_diagnostics') end, { desc = "document" })
-
-          vim.keymap.set('n', '<leader>xw', function() require('trouble').toggle('workspace_diagnostics') end, { desc = "workspace" })
-      
         end,
       })
       

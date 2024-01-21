@@ -10,5 +10,6 @@ in
   config.vim.luaConfigRC = ''
     ${builtins.readFile ./config.lua}
     telescope_setup("${pkgs.ripgrep}/bin/rg", "${pkgs.fd}/bin/fd")
+    ${writeIf config.vim.lsp.enable (builtins.readFile ./lsp.lua)}
   '';
 }

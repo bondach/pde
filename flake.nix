@@ -150,11 +150,6 @@
       url = "github:Olical/conjure";
       flake = false;
     };
-    np-trouble = {
-      url = "github:folke/trouble.nvim";
-      flake = false;
-    };
-
 
     #------------- Themes section --------------------
     np-kanagawa = {
