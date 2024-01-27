@@ -4,8 +4,8 @@
 {
   config.vim.plugins = [ pkgs.plugins.ufo pkgs.plugins.promise-async ];
 
-  config.vim.luaConfigRC = ''
-    vim.o.fillchars      = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+  config.vim.config.lua.ufo = ''
+    vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:,vert:█,horiz:▄,vertleft:█,vertright:█,verthoriz:█,horizup:█,horizdown:▄]]
     vim.o.foldcolumn     = '1'
     vim.o.foldlevel      = 99
     vim.o.foldlevelstart = 99

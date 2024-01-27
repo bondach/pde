@@ -150,6 +150,10 @@
       url = "github:Olical/conjure";
       flake = false;
     };
+    np-bqf = {
+      url = "github:kevinhwang91/nvim-bqf";
+      flake = false;
+    };
 
     #------------- Themes section --------------------
     np-kanagawa = {

@@ -309,6 +309,22 @@
         "type": "github"
       }
     },
+    "np-bqf": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1701870018,
+        "narHash": "sha256-y3prQNGDU+FpoiA7KHBCdAFaJ6n/hZZsXAYLack4is4=",
+        "owner": "kevinhwang91",
+        "repo": "nvim-bqf",
+        "rev": "bdc2a4e5bb670b3c0e33ada9c0eec636d93a0748",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kevinhwang91",
+        "repo": "nvim-bqf",
+        "type": "github"
+      }
+    },
     "np-cmp-buffer": {
       "flake": false,
       "locked": {
@@ -767,6 +783,7 @@
         "neovim": "neovim",
         "nixd": "nixd",
         "nixpkgs": "nixpkgs_3",
+        "np-bqf": "np-bqf",
         "np-cmp-buffer": "np-cmp-buffer",
         "np-cmp-clojure": "np-cmp-clojure",
         "np-cmp-cmdline": "np-cmp-cmdline",

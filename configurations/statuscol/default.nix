@@ -4,7 +4,7 @@
 {
   config.vim.plugins = [ pkgs.plugins.statuscol ];
 
-  config.vim.luaConfigRC = ''
+  config.vim.config.lua.statuscol = ''
     -- Stealed from here
     -- https://github.com/kevinhwang91/nvim-ufo/issues/4#issuecomment-1512724088
     local statuscol_builtin = require("statuscol.builtin")

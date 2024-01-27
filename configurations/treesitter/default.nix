@@ -4,7 +4,7 @@
 {
   config.vim.plugins = [ pkgs.plugins.treesitter ];
 
-  config.vim.luaConfigRC = ''
+  config.vim.config.lua.treesitter = ''
     require('nvim-treesitter.configs').setup {
       auto_install = false,
       highlight = {

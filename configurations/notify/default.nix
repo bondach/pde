@@ -4,7 +4,7 @@
 {
   config.vim.plugins = [ pkgs.plugins.notify ];
 
-  config.vim.luaConfigRC = ''
+  config.vim.config.lua.notify = ''
     require('notify').setup({
       background_color = "#000000",
     })

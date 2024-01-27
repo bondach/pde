@@ -10,6 +10,7 @@ let
               ];
     specialArgs = { pkgs = p; };
   };
+  ncfg = neovimConfigurations.config.vim.config.lua;
 in {
   neovim = p.wrapNeovim neovim {
     viAlias = true;
@@ -17,7 +18,20 @@ in {
     configure = {
       customRC = ''
         lua << EOF
-        ${neovimConfigurations.config.vim.luaConfigRC}
+        ${ncfg.basic}
+        ${ncfg.telescope}
+        ${ncfg.neotree}
+        ${ncfg.gitsigns}
+        ${ncfg.lualine}
+        ${ncfg.bqf}
+        ${ncfg.themes}
+        ${ncfg.ufo}
+        ${ncfg.statuscol}
+        ${ncfg.treesitter}
+        ${ncfg.notify}
+        ${ncfg.lsp}
+        ${ncfg.cmp}
+        ${ncfg.whichkey}
         EOF
       '';
       packages.myVimPackage = {

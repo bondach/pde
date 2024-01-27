@@ -1,20 +1,33 @@
-{ ... }:
+{ pkgs, lib ? pkgs.lib, ... }:
+
+with lib;
+with builtins;
 
 {
+  options.vim.config.lua = mkOption {
+    type = types.attrs;
+    description = "Neovim's lua configs";
+  };
+  options.vim.plugins = mkOption {
+    description = "Neovim's plugins";
+    type = with types; listOf (nullOr package);
+  };
+
   imports = [
-    ./whichkey
-    ./cmp
-    ./lsp
-    ./notify
-    ./treesitter
-    ./statuscol
-    ./ufo
+    ./basic
+    ./telescope
+    ./neotree
+    ./gitsigns
+    ./bqf
     ./themes
     ./lualine
-    ./gitsigns
-    ./neotree
-    ./telescope
-    ./basic
-    ./core
+    ./ufo
+    ./statuscol
+    ./treesitter
+    ./notify
+    ./lsp
+    ./cmp
+    ./whichkey
   ];
 }
+

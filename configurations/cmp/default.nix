@@ -23,8 +23,10 @@ in
    ]
    else []);
 
-  config.vim.luaConfigRC = ''
+  config.vim.config.lua.cmp = ''
     local cmp = require('cmp')
+    local cmp_borders =  { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
+
     local kind_icons = {
     	Text = "󰊄",
     	Method = "",
@@ -67,8 +69,14 @@ in
         end,
       },
       window = {
-        completion    = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion    = cmp.config.window.bordered({
+          border = cmp_borders,
+          winhighlight = "Normal:NormalFloat,CursorLine:PmenuSel,Search:None",
+        }),
+        documentation = cmp.config.window.bordered({
+          border = cmp_borders,
+          winhighlight = "Normal:NormalFloat",
+        }),
       },
       experimental = {
         ghost_text = false,

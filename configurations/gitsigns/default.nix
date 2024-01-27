@@ -4,7 +4,7 @@
 {
   config.vim.plugins = [ pkgs.plugins.gitsigns ];
 
-  config.vim.luaConfigRC = ''
+  config.vim.config.lua.gitsigns = ''
     -- TODO: сделать так, чтобы gitsigns врубался, если произошла смена рабочей директории на ту, в которой есть git репозиторий
     function gitsigns_setup()
       local git_dir = vim.fn.finddir('.git', vim.fn.getcwd() .. ';')

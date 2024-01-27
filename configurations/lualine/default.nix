@@ -4,7 +4,7 @@
 {
   config.vim.plugins = [ pkgs.plugins.lualine pkgs.plugins.web-devicons ];
 
-  config.vim.luaConfigRC = ''
+  config.vim.config.lua.lualine = ''
     require('lualine').setup()
   '';
 }

@@ -1,9 +1,11 @@
-{ ... }:
+{ pkgs, lib ? pkgs.lib, ... }:
 
+with lib;
 
 {
-  config.vim = {
-    luaConfigRC = ''
+  config.vim.config.lua.basic = ''
+      vim.loader.enable()
+
       vim.opt.ignorecase = true
       vim.opt.smartcase = true
       vim.opt.showmatch = true
@@ -38,6 +40,31 @@
       vim.api.nvim_command("autocmd TermOpen * setlocal norelativenumber") -- no relative numbers
       vim.api.nvim_command("autocmd TermEnter * setlocal signcolumn=no") -- no sign column
       vim.keymap.set('t', '<esc>', "<C-\\><C-n>")                    -- esc to exit insert mode
+
+      vim.opt.numberwidth = 5
+      vim.opt.statuscolumn = ' %s%=%{v:relnum?v:relnum:v:lnum}%#WinSeparator#  '
+      vim.opt.pumheight = 10
+      --[[
+          glyphs = {
+        default = '󰈔',
+        folder = {
+            arrow_closed = '',
+            arrow_open = '',
+            default = ' ',
+            open = ' ',
+            empty = ' ',
+            empty_open = ' ',
+            symlink = '󰉒 ',
+            symlink_open = '󰉒 ',
+        },
+        git = {
+            deleted = '',
+            unstaged = '',
+            untracked = '',
+            staged = '',
+            unmerged = '',
+        },
+      --]]
+
     '';
-  };
 }

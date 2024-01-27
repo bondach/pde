@@ -8,12 +8,18 @@ in
 {
   config.vim.plugins = [ pkgs.plugins.which-key ];
 
-  config.vim.luaConfigRC = ''
+  config.vim.config.lua.whichkey = ''
     vim.o.timeout    = true
     vim.o.timeoutlen = 500
     
     local which_key = require('which-key')
-    which_key.setup({})
+    which_key.setup({
+      window = {
+        border = { "", "▔", "", "", "", " ", "", "" },
+        margin = { 0, 0, 1, 0 },
+        padding = { 0, 0, 0, 0 },
+      },
+    })
     which_key.register({
       ["<leader>f"] = { name = "find" },
       ["<leader>g"] = { name = "git" },
