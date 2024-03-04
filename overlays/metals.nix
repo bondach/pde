@@ -1,8 +1,8 @@
 f: p:
 
 let
-  version = "1.2.0";
-  outputHash = "sha256-nikQ/GFRWmYYzboc9TWIi9gd5kwgCxOLhvIEQWusFik=";
+  version = "1.2.2";
+  outputHash = "sha256-xk2ionn/lBV8AR7n7OR03UuRCoP1/K6KuohhpRwFock=";
   deps = p.stdenv.mkDerivation {
     name = "metals-${version}";
     buildCommand = ''

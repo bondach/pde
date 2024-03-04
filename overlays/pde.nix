@@ -5,8 +5,8 @@ in
 if (target == "scala") then
 {
   pde = p.mkShell {
-    packages = [ p.neovim p.jdk p.sbt p.bloop p.mill p.metals p.coursier
-                 p.ripgrep p.fd p.fish ];
+    packages = [ p.neovim p.jdk p.sbt p.mill p.metals p.coursier
+                 p.ripgrep p.fd ];
     shellHook = ''
       JAVA_HOME=${p.jdk}/bin
       echo "Welcome to Scala dev environment!"
