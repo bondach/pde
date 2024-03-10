@@ -194,11 +194,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1704177155,
-        "narHash": "sha256-9i1Smaqll8x1jxMkALl42qYhBuJd+SzDMQN2ybVlC2c=",
+        "lastModified": 1707749130,
+        "narHash": "sha256-GGcLEg546mjyQbUzbd/z79sGHPK8jYbQKeHrbl8Zb/U=",
         "owner": "nix-community",
         "repo": "nixd",
-        "rev": "09404c1ab9cbc3fe322881fc123d2cd63d84bdd8",
+        "rev": "548226eca2994b2e9e1592c6910410b4a2d0575c",
         "type": "github"
       },
       "original": {
@@ -295,11 +295,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1703961334,
-        "narHash": "sha256-M1mV/Cq+pgjk0rt6VxoyyD+O8cOUiai8t9Q6Yyq4noY=",
+        "lastModified": 1709961763,
+        "narHash": "sha256-6H95HGJHhEZtyYA3rIQpvamMKAGoa8Yh2rFV29QnuGw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b0d36bd0a420ecee3bc916c91886caca87c894e9",
+        "rev": "3030f185ba6a4bf4f18b87f345f104e6a6961f34",
         "type": "github"
       },
       "original": {
@@ -536,11 +536,11 @@
     "np-metals": {
       "flake": false,
       "locked": {
-        "lastModified": 1702802410,
-        "narHash": "sha256-LOVkDVfKsUCrs7m1wG28wm810CFETPel+hb8ZaVZEIM=",
+        "lastModified": 1709368177,
+        "narHash": "sha256-0v3kcosNthhdOrdD825a0eLPqBXIsBJpJxYY7bzZohU=",
         "owner": "scalameta",
         "repo": "nvim-metals",
-        "rev": "1e269f1f01e6b970603d51e9e044824d9d8114e7",
+        "rev": "4f9bf0c821092f20dd34c1a4ea5b07b0500ff089",
         "type": "github"
       },
       "original": {
