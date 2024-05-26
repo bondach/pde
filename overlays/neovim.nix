@@ -31,6 +31,7 @@ in {
         ${ncfg.notify}
         ${ncfg.lsp}
         ${ncfg.cmp}
+        ${ncfg.paredit}
         ${ncfg.whichkey}
         EOF
       '';

@@ -25,6 +25,7 @@ with builtins;
     ./statuscol
     ./treesitter
     ./notify
+    ./paredit
     ./lsp
     ./cmp
     ./whichkey

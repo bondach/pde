@@ -11,7 +11,6 @@
             config = presets.${target};
           };
         in import nixpkgs { inherit system overlays; };
-
     in {
       packages = {
         default = (pkgs { target = "base"; }).neovim;
@@ -20,11 +19,10 @@
         scala = (pkgs { target = "scala"; }).pde;
         scala-temurin-17 = (pkgs { target = "scala"; javaPlatform = "temurin-bin-17"; }).pde;
         clojure = (pkgs { target = "clojure"; }).pde;
-        # Currently, nixd uses insecure nix version under hood
-        #nix = (pkgs { target = "nix"; }).pde;
-        lua = (pkgs { target = "lua"; }).pde;
+      #  #nix = (pkgs { target = "nix"; }).pde;
+      #  lua = (pkgs { target = "lua"; }).pde;
       };
-    }
+   }
   );
 
   inputs = {
@@ -32,19 +30,18 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
+    nixd.url = "github:nix-community/nixd";
+
     neovim = {
-      url = "github:neovim/neovim?dir=contrib&ref=v0.9.5";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:neovim/neovim?dir=contrib&ref=v0.10.0";
       inputs.flake-utils.follows = "flake-utils";
     };
-
-    nixd.url = "github:nix-community/nixd";
 
     # Neovim's plugins
     # Prefix 'np-' expands to 'neovim plugin'
     #============= Basic plugins section =============
     np-telescope = {
-      url = "github:nvim-telescope/telescope.nvim?ref=0.1.5";
+      url = "github:nvim-telescope/telescope.nvim?ref=0.1.6";
       flake = false;
     };
     np-telescope-live-grep-args = {
@@ -155,6 +152,10 @@
       url = "github:kevinhwang91/nvim-bqf";
       flake = false;
     };
+    np-paredit = {
+      url = "github:julienvincent/nvim-paredit";
+      flake = false;
+    };
 
     #------------- Themes section --------------------
     np-kanagawa = {
@@ -260,15 +261,7 @@
     };
     #=================================================
 
-    clj-nix.url = "github:jlesquembre/clj-nix";
-    clojure-lsp = {
-      url = "github:clojure-lsp/clojure-lsp";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        clj-nix.follows = "clj-nix";
-        flake-utils.follows = "flake-utils";
-      };
-    };
+    clojure-lsp.url = "github:clojure-lsp/clojure-lsp";
 
   };
 }
